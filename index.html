@@ -13,7 +13,7 @@ html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--bf);min-height:100vh;transition:background .5s,color .5s}
 canvas#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
 #torch{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0;transition:opacity .5s}
-body.mining #torch{opacity:1}
+body.Mining #torch{opacity:1}
 main{position:relative;z-index:2;max-width:760px;margin:0 auto;padding:18px 16px 40px}
 h1{font:800 2rem/1.1 var(--hf);margin:6px 0 4px}
 .sub{color:var(--mute);margin:0 0 14px}
@@ -51,7 +51,7 @@ input.n{flex:none;width:78px;padding:3px 6px;border-radius:8px;text-align:right;
 .src2{font-size:.8rem;color:var(--mute);margin-top:6px}
 </style>
 </head>
-<body class="mining">
+<body class="Mining">
 <canvas id="fx" aria-hidden="true"></canvas>
 <div id="torch" aria-hidden="true"></div>
 <main>
@@ -88,15 +88,15 @@ function save(){try{var o={};for(var k in DEMO)o[k]=DEMO[k].map(function(s){retu
 var STAGES=["Early game","Mid game","Late game","Maxed out"];
 var ABIL={"Mining Speed Boost":1,"Pickobulus":1,"Maniac Miner":1,"Tunnel Vision":1,"Gemstone Infusion":1,"Sheer Force":1};
 function mk(a,o){var r={};a.forEach(function(n){r[n]="m"});for(var k in o)r[k]=o[k];return r}
-var GAP="No node list found for this stage yet. Asxent’s shafting target is 8.6M mithril, 21.3M gemstone and 20.4M glacite powder. For gold mining he suggests a Maniac Miner tree at HOTM 7 or a Mining Speed Boost tree at HOTM 9.";
+var GAP="No node list found for this stage yet. Asxent’s shafting target is 8.6M mithril, 21.3M gemstone and 20.4M glacite powder. For gold Mining he suggests a Maniac Miner tree at HOTM 7 or a Mining Speed Boost tree at HOTM 9.";
 var bm=mk(["Mining Speed","Mining Fortune"],{"Pickobulus":"a"});
 var coal=mk(["Mining Speed","Mining Fortune","Efficient Miner","Sky Mall","Old-School","Mole","Seasoned Mineman","Blockhead","Keep It Cool","Speedy Mineman","Fortunate Mineman"],{"Maniac Miner":"a","Core of the Mountain":"c","Professional":"r","Gem Lover":"r","Subterranean Fisher":"r","Lonesome Miner":"r","Great Explorer":"o"});
 var TREES={
-Mining:{name:"Heart of the Mountain",src:"Sources: Asxent’s mining guide (11 Nov 2026) and SkyProgression’s Coal and Fairy Grotto guides (Oct 2026), and the Hypixel SkyBlock Wiki for shafting perks. Where a node sits inside its row is approximate.",
+Mining:{name:"Heart of the Mountain",src:"Sources: Asxent’s Mining guide (11 Nov 2026) and SkyProgression’s Coal and Fairy Grotto guides (Oct 2026), and the Hypixel SkyBlock Wiki for shafting perks. Where a node sits inside its row is approximate.",
 rows:[[10,["Gemstone Infusion","Crystalline","Gifts from the Departed","Mining Master","Dead Man’s Chest","Vanguard Seeker","Sheer Force"]],[9,["Metal Head","Rags to Riches","Eager Adventurer"]],[8,["Miner’s Blessing","No Stone Unturned","Strong Arm","Steady Hand","Warm Heart","Surveyor","Mineshaft Mayhem"]],[7,["Speedy Mineman","Powder Buff","Fortunate Mineman"]],[6,["Tunnel Vision","Blockhead","Subterranean Fisher","Keep It Cool","Lonesome Miner","Great Explorer","Maniac Miner"]],[5,["Daily Grind","Core of the Mountain","Daily Powder"]],[4,["Sky Mall","Old-School","Professional","Mole","Gem Lover","Seasoned Mineman","Front Loaded"]],[3,["Luck of the Cave","Efficient Miner","Quick Forge"]],[2,["Mining Speed Boost","Precision Mining","Mining Fortune","Titanium Insanium","Pickobulus"]],[1,["Mining Speed"]]],
-b:[[{n:bm,t:"HOTM 1 to 4. Use Pickobulus for commissions, and put powder into Mining Speed and Mining Fortune."},{n:bm,t:"Same tree. Early mining earns very little, so just get to HOTM 7."}],
+b:[[{n:bm,t:"HOTM 1 to 4. Use Pickobulus for commissions, and put powder into Mining Speed and Mining Fortune."},{n:bm,t:"Same tree. Early Mining earns very little, so just get to HOTM 7."}],
 [{n:mk(["Mining Speed","Mining Fortune","Great Explorer","Powder Buff","Speedy Mineman","Fortunate Mineman"],{"Lonesome Miner":"r","Core of the Mountain":"c"}),t:"HOTM 5 to 7. Max Great Explorer first, then Powder Buff. Put powder into Powder Buff until you hit the next multiple of 5 on Great Explorer."},{n:coal,t:"Coal and Hard Stone at HOTM 7. Costs 8.5M mithril, 19.4M gemstone and 1.3M glacite powder. Core of the Mountain level 5. Great Explorer stays off."}],
-[{n:mk(["Mining Speed","Mining Fortune","Great Explorer","Powder Buff","Speedy Mineman","Fortunate Mineman"],{"Lonesome Miner":"r","Core of the Mountain":"c"}),t:"Finish these before the Glacite Tunnels: Mining Speed and Fortune, then Fortunate and Speedy Mineman, then Powder Buff."},{n:mk(["Mining Speed","Mining Fortune","Speedy Mineman","Fortunate Mineman"],{"Mining Speed Boost":"a","Powder Buff":"r","Core of the Mountain":"c"}),t:"Gemstone mining in the Magma Fields. Core of the Mountain level 7. Powder Buff is only there as a path."}],
+[{n:mk(["Mining Speed","Mining Fortune","Great Explorer","Powder Buff","Speedy Mineman","Fortunate Mineman"],{"Lonesome Miner":"r","Core of the Mountain":"c"}),t:"Finish these before the Glacite Tunnels: Mining Speed and Fortune, then Fortunate and Speedy Mineman, then Powder Buff."},{n:mk(["Mining Speed","Mining Fortune","Speedy Mineman","Fortunate Mineman"],{"Mining Speed Boost":"a","Powder Buff":"r","Core of the Mountain":"c"}),t:"Gemstone Mining in the Magma Fields. Core of the Mountain level 7. Powder Buff is only there as a path."}],
 [{n:mk(["Mining Speed","Mining Fortune","Efficient Miner","Mole","Blockhead","Steady Hand","Surveyor","Crystalline","Dead Man’s Chest"],{"Mineshaft Mayhem":"r","Core of the Mountain":"c"}),t:"Shafting perks from the Hypixel wiki, not a ranked tree or powder split. Surveyor, Crystalline and Dead Man’s Chest raise shaft, crystal and corpse chances. Steady Hand adds Gemstone Spread inside shafts. Mole and Efficient Miner speed up looting, and Blockhead only helps on Glacite and Hard Stone. Mineshaft Mayhem only needs to be on when you enter a shaft. Powder target: 8.6M mithril, 21.3M gemstone and 20.4M glacite."},{n:mk(["Mining Speed","Mining Fortune","Efficient Miner","Mole","Blockhead","Steady Hand","Surveyor","Crystalline","Dead Man’s Chest"],{"Mineshaft Mayhem":"r","Core of the Mountain":"c"}),t:"Shafting perks from the Hypixel wiki, not a ranked tree or powder split. Surveyor, Crystalline and Dead Man’s Chest raise shaft, crystal and corpse chances. Steady Hand adds Gemstone Spread inside shafts. Mole and Efficient Miner speed up looting, and Blockhead only helps on Glacite and Hard Stone. Mineshaft Mayhem only needs to be on when you enter a shaft. Powder target: 8.6M mithril, 21.3M gemstone and 20.4M glacite."}]]},
 Foraging:{name:"Heart of the Forest",src:"Source: foragingstats.com Heart of the Forest guide (8-tier tree, August 2026). Money builds are my reading of what each node pays, since no guide ranks them.",
 rows:[[8,["Monster Hunter","Forest Speed","Essence Fortune","Timber","Two-for-one","Forest Strength","Beekeeper"]],[7,["Half Empty","Ricochet","Half Full"]],[6,["Homing Axe","Forest Fisher","Strength Boost","Starlyn Supreme","Speed Boost","Efficient Forager","Maniac Slicer"]],[5,["Tree Whisperer","Center of the Forest","Free Trial"]],[4,["Lottery","Foraging Madness","Iron Lungs","250 Gifts","Daily Wishes","Early Bird","Precision Cutting"]],[3,["Deep Waters","Hunter’s Luck","Galatea’s Might"]],[2,["Damage Boost","Luck of the Forest","Foraging Fortune","Collector","Axe Toss"]],[1,["Sweep"]]],
@@ -111,7 +111,7 @@ var cur="Mining",$=function(i){return document.getElementById(i)},ro=matchMedia(
 function fmt(n){return n.toLocaleString("en-US")}
 function render(){var t=TH[cur],r=document.documentElement.style;
  ["bg","panel","ink","mute","a","b","bd"].forEach(function(k){r.setProperty("--"+k,t[k])});r.setProperty("--hf",t.hf);r.colorScheme=t.scheme;
- document.body.className=cur==="Mining"?"mining":"";$("title").textContent=cur;$("tag").textContent=t.tag;
+ document.body.className=cur==="Mining"?"Mining":"";$("title").textContent=cur;$("tag").textContent=t.tag;
  var h="";DEMO[cur].forEach(function(s,si){s[1]=s[3].reduce(function(a,x){return a+x[1]},0);h+='<div class="stat"><h2>'+s[0]+'<span>'+fmt(s[1])+" / "+fmt(s[2])+'</span></h2><div class="bar"><i style="width:'+Math.min(100,s[1]/s[2]*100)+'%"></i></div>';
   s[3].forEach(function(x,xi){h+='<div class="src"><span>'+x[0]+'</span><em><input class="n" type="number" inputmode="numeric" min="0" max="'+x[2]+'" value="'+x[1]+'" data-s="'+si+'" data-x="'+xi+'" aria-label="'+s[0]+' from '+x[0]+'"> of '+fmt(x[2])+"</em></div>"});h+="</div>"});$("stats").innerHTML=h;Array.prototype.forEach.call(document.querySelectorAll("input.n"),function(i){i.onchange=function(){var v=Math.max(0,Math.min(+i.max,Math.round(+i.value||0)));DEMO[cur][+i.dataset.s][3][+i.dataset.x][1]=v;save();render()}});drawTree();
  var u="";UPS.forEach(function(x){u+='<div class="up"><span>'+x[0]+"</span><b>"+x[1]+"</b></div>"});$("ups").innerHTML=u;
